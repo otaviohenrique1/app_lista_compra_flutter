@@ -1,4 +1,5 @@
 import 'package:app_lista_compra_flutter/pages/header.dart';
+import 'package:app_lista_compra_flutter/utils/lista.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 import 'package:app_lista_compra_flutter/components/itemlista.dart';
@@ -13,27 +14,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    String nome = "Leite";
-    num quantidade = 30;
-    String unidade = "un";
-
     return Scaffold(
       appBar: const Header(titulo: "Lista"),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: ListView(
-          children: <Widget>[
-            ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-            ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-            ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-            ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-            ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-            ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-            ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-            ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-            ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-            ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-          ],
+        child: ListView.builder(
+          itemCount: produtos.length,
+          itemBuilder: (context, index) {
+            return ItemLista(
+              nome: produtos[index]["nome"],
+              quantidade: produtos[index]["quantidade"],
+              unidade: produtos[index]["unidade"],
+            );
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -43,6 +36,32 @@ class _HomePageState extends State<HomePage> {
         shape: const CircleBorder(),
         child: const Icon(Icons.add, color: Colors.white, size: 32),
       ),
+    );
+  }
+}
+
+class ListaTeste extends StatelessWidget {
+  const ListaTeste({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    String nome = "Leite";
+    num quantidade = 30;
+    String unidade = "un";
+
+    return ListView(
+      children: <Widget>[
+        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
+      ],
     );
   }
 }
