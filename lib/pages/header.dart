@@ -32,6 +32,10 @@ class _HeaderState extends State<Header> {
         ),
         textAlign: TextAlign.start,
       ),
+      iconTheme: const IconThemeData(
+        color: Colors.white,
+        size: 36,
+      ),
       // toolbarHeight: 67,
       actions: [
         IconButton(

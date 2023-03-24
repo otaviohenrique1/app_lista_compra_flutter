@@ -1,4 +1,5 @@
 import 'package:app_lista_compra_flutter/pages/header.dart';
+import 'package:app_lista_compra_flutter/pages/novoproduto.dart';
 import 'package:app_lista_compra_flutter/utils/lista.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
@@ -30,7 +31,12 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const NovoProduto()),
+          );
+        },
         tooltip: 'Adicionar',
         backgroundColor: globalStyleColors["azul"],
         shape: const CircleBorder(),
