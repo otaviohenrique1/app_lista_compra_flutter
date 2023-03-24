@@ -23,6 +23,7 @@ class NovoProduto extends StatefulWidget {
 
 class _NovoProdutoState extends State<NovoProduto> {
   String dropdownValue = unidadeQuantidade.first;
+  String dropdownValue2 = unidadeQuantidade.first;
 
   @override
   Widget build(BuildContext context) {
