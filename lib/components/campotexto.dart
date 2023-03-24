@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class CampoTexto extends StatelessWidget {
   final String labelText;
   final TextInputType keyboardType;
+  final bool? obscureText;
 
   const CampoTexto({
     super.key,
     required this.labelText,
     required this.keyboardType,
+    this.obscureText,
   });
 
   @override
@@ -23,6 +25,7 @@ class CampoTexto extends StatelessWidget {
         fontSize: 16,
         fontWeight: FontWeight.normal,
       ),
+      obscureText: (obscureText == null) ? false : obscureText!,
       decoration: InputDecoration(
         labelText: labelText,
         labelStyle: const TextStyle(
