@@ -12,32 +12,29 @@ class CampoTexto extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 20),
-      child: TextFormField(
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return "Campo vazio";
-          }
-          return null;
-        },
-        style: const TextStyle(
+    return TextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return "Campo vazio";
+        }
+        return null;
+      },
+      style: const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.normal,
+      ),
+      decoration: InputDecoration(
+        labelText: labelText,
+        labelStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.normal,
         ),
-        decoration: InputDecoration(
-          labelText: labelText,
-          labelStyle: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.normal,
-          ),
-          errorStyle: const TextStyle(
-            color: Colors.red,
-            fontSize: 16,
-          ),
+        errorStyle: const TextStyle(
+          color: Colors.red,
+          fontSize: 16,
         ),
-        keyboardType: keyboardType,
       ),
+      keyboardType: keyboardType,
     );
   }
 }
