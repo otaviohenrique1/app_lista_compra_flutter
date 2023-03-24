@@ -1,3 +1,4 @@
+import 'package:app_lista_compra_flutter/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 
@@ -53,23 +54,50 @@ class _HeaderState extends State<Header> {
             color: Colors.white,
             size: 36,
           ),
-          onSelected: (ItemMenuEnum item) {
+          onSelected: (item) {
             setState(() {
               selectedMenu = item;
+              if (item == ItemMenuEnum.sair) {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Login()),
+                );
+              }
             });
           },
           itemBuilder: (BuildContext context) => <PopupMenuEntry<ItemMenuEnum>>[
             const PopupMenuItem<ItemMenuEnum>(
               value: ItemMenuEnum.pefil,
-              child: Text('Pefil'),
+              child: Text(
+                'Pefil',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                ),
+                textAlign: TextAlign.center,
+              ),
             ),
             const PopupMenuItem<ItemMenuEnum>(
               value: ItemMenuEnum.busca,
-              child: Text('Busca'),
+              child: Text(
+                'Busca',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                ),
+                textAlign: TextAlign.center,
+              ),
             ),
             const PopupMenuItem<ItemMenuEnum>(
               value: ItemMenuEnum.sair,
-              child: Text('Sair'),
+              child: Text(
+                'Sair',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                ),
+                textAlign: TextAlign.center,
+              ),
             ),
           ],
         )
