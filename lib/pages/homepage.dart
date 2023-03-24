@@ -1,4 +1,4 @@
-import 'package:app_lista_compra_flutter/pages/header.dart';
+import 'package:app_lista_compra_flutter/components/header.dart';
 import 'package:app_lista_compra_flutter/pages/novoproduto.dart';
 import 'package:app_lista_compra_flutter/utils/lista.dart';
 import 'package:flutter/material.dart';
