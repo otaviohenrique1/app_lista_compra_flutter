@@ -1,6 +1,6 @@
 import 'package:app_lista_compra_flutter/components/botao.dart';
+import 'package:app_lista_compra_flutter/components/campotexto.dart';
 import 'package:app_lista_compra_flutter/components/header.dart';
-import 'package:app_lista_compra_flutter/pages/teste.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 import 'package:flutter/material.dart';
 
@@ -22,10 +22,11 @@ class NovoProduto extends StatefulWidget {
 }
 
 class _NovoProdutoState extends State<NovoProduto> {
+  String dropdownValue = unidadeQuantidade.first;
+
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
-    String dropdownValue = unidadeQuantidade.first;
 
     return Scaffold(
       appBar: const Header(titulo: "Novo Produto"),
@@ -35,181 +36,102 @@ class _NovoProdutoState extends State<NovoProduto> {
           key: formKey,
           child: ListView(
             children: [
-              TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Campo vazio";
-                  }
-                  return null;
-                },
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.normal,
-                ),
-                decoration: const InputDecoration(
-                  labelText: "Nome",
-                  labelStyle: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.normal,
-                  ),
-                  errorStyle: TextStyle(
-                    color: Colors.red,
-                    fontSize: 16,
-                  ),
-                ),
+              const CampoTexto(
+                labelText: "Nome",
                 keyboardType: TextInputType.text,
               ),
-              TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Campo vazio";
-                  }
-                  return null;
-                },
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.normal,
-                ),
-                decoration: const InputDecoration(
-                  labelText: "Quantidade",
-                  labelStyle: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.normal,
-                  ),
-                  errorStyle: TextStyle(
-                    color: Colors.red,
-                    fontSize: 16,
-                  ),
-                ),
+              const CampoTexto(
+                labelText: "Quantidade",
                 keyboardType: TextInputType.number,
               ),
-              DropdownButton<String>(
-                value: dropdownValue,
-                // icon: const Icon(Icons.arrow_downward),
-                elevation: 16,
-                // style: const TextStyle(color: Colors.deepPurple),
-                underline: Container(
-                  height: 2,
-                  color: Colors.deepPurpleAccent,
-                ),
-                items: unidadeQuantidade
-                    .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-                onChanged: (String? value) {
-                  // This is called when the user selects an item.
-                  setState(() {
-                    dropdownValue = value!;
-                  });
-                },
-              ),
-              const Campo(
-                labelText: "Categoria",
-                keyboardType: TextInputType.text,
-              ),
               Container(
-                margin: const EdgeInsets.only(bottom: 16),
-                child: TextFormField(
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return "Campo vazio";
-                    }
-                    return null;
+                margin: const EdgeInsets.only(bottom: 20),
+                child: DropdownButtonFormField(
+                  value: dropdownValue,
+                  items: unidadeQuantidade
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(
+                        value,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 16,
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (value) async {
+                    setState(() {
+                      dropdownValue = value!;
+                    });
                   },
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.normal,
-                  ),
                   decoration: const InputDecoration(
-                    labelText: "Categoria",
-                    labelStyle: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
                     errorStyle: TextStyle(
                       color: Colors.red,
                       fontSize: 16,
                     ),
                   ),
-                  keyboardType: TextInputType.text,
+                  validator: (value) {
+                    if (value == null ||
+                        value.isEmpty ||
+                        value == "Selecione") {
+                      return "Valor inválido";
+                    }
+                    return null;
+                  },
                 ),
               ),
-              Botao(
-                backgroundColor: globalStyleColors["azul"],
-                label: "Salvar",
-                fontColor: Colors.white,
-                fontSize: 20,
-                onPressed: () {
-                  if (formKey.currentState!.validate()) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Processing Data'),
-                        showCloseIcon: true,
-                      ),
-                    );
-                  }
-                },
+              // DropdownButton<String>(
+              //   // icon: const Icon(Icons.arrow_downward),
+              //   // hint: const Text("Selecione"),
+              //   // style: const TextStyle(color: Colors.deepPurple),
+              //   value: dropdownValue,
+              //   elevation: 16,
+              //   underline: Container(
+              //     height: 2,
+              //     color: Colors.deepPurpleAccent,
+              //   ),
+              //   items: unidadeQuantidade
+              //       .map<DropdownMenuItem<String>>((String value) {
+              //     return DropdownMenuItem<String>(
+              //       value: value,
+              //       child: Text(value),
+              //     );
+              //   }).toList(),
+              //   onChanged: (String? value) {
+              //     // This is called when the user selects an item.
+              //     setState(() {
+              //       dropdownValue = value!;
+              //     });
+              //   },
+              // ),
+              const CampoTexto(
+                labelText: "Categoria",
+                keyboardType: TextInputType.text,
               ),
-              Botao(
-                backgroundColor: globalStyleColors["azul"],
-                label: "Teste",
-                fontColor: Colors.white,
-                fontSize: 20,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Teste()),
-                  );
-                },
+              Container(
+                margin: const EdgeInsets.only(top: 30),
+                child: Botao(
+                  backgroundColor: globalStyleColors["azul"],
+                  label: "Salvar",
+                  fontColor: Colors.white,
+                  fontSize: 20,
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Processing Data'),
+                          showCloseIcon: true,
+                        ),
+                      );
+                    }
+                  },
+                ),
               ),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class Campo extends StatelessWidget {
-  final String labelText;
-  final TextInputType keyboardType;
-
-  const Campo({
-    super.key,
-    required this.labelText,
-    required this.keyboardType,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 20),
-      child: TextFormField(
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return "Campo vazio";
-          }
-          return null;
-        },
-        style: const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.normal,
-        ),
-        decoration: InputDecoration(
-          labelText: labelText,
-          labelStyle: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.normal,
-          ),
-          errorStyle: const TextStyle(
-            color: Colors.red,
-            fontSize: 16,
-          ),
-        ),
-        keyboardType: keyboardType,
       ),
     );
   }
