@@ -1,18 +1,17 @@
 import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/campotexto.dart';
 import 'package:app_lista_compra_flutter/pages/homepage.dart';
-import 'package:app_lista_compra_flutter/pages/novousuario.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class NovoUsuario extends StatefulWidget {
+  const NovoUsuario({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<NovoUsuario> createState() => _NovoUsuarioState();
 }
 
-class _LoginState extends State<Login> {
+class _NovoUsuarioState extends State<NovoUsuario> {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
@@ -56,11 +55,17 @@ class _LoginState extends State<Login> {
                   ),
                   Botao(
                     backgroundColor: globalStyleColors["azul"],
-                    label: "Entrar",
+                    label: "Salvar",
                     fontColor: Colors.white,
                     fontSize: 20,
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Usuario cadastrado'),
+                            showCloseIcon: true,
+                          ),
+                        );
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
@@ -70,16 +75,17 @@ class _LoginState extends State<Login> {
                     },
                   ),
                   Botao(
-                    backgroundColor: Colors.green,
-                    label: "Novo usuário",
+                    backgroundColor: Colors.red,
+                    label: "Voltar",
                     fontColor: Colors.white,
                     fontSize: 20,
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const NovoUsuario()),
-                      );
+                      Navigator.pop(context);
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (context) => const NovoUsuario()),
+                      // );
                     },
                   ),
                 ],

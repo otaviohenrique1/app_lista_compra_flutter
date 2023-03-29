@@ -16,7 +16,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const Header(titulo: "Lista"),
+      appBar: const Header(
+        titulo: "Lista",
+        botaoBusca: true,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: ListView.builder(

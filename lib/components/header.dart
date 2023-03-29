@@ -1,3 +1,4 @@
+import 'package:app_lista_compra_flutter/pages/busca.dart';
 import 'package:app_lista_compra_flutter/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
@@ -6,8 +7,9 @@ enum ItemMenuEnum { pefil, busca, sair }
 
 class Header extends StatefulWidget implements PreferredSizeWidget {
   final String titulo;
+  final bool botaoBusca;
 
-  const Header({super.key, required this.titulo});
+  const Header({super.key, required this.titulo, required this.botaoBusca});
 
   @override
   State<Header> createState() => _HeaderState();
@@ -39,13 +41,21 @@ class _HeaderState extends State<Header> {
       ),
       // toolbarHeight: 67,
       actions: [
-        IconButton(
-          icon: const Icon(
-            Icons.search,
-            color: Colors.white,
-            size: 36,
+        Visibility(
+          visible: widget.botaoBusca,
+          child: IconButton(
+            icon: const Icon(
+              Icons.search,
+              color: Colors.white,
+              size: 36,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Busca()),
+              );
+            },
           ),
-          onPressed: () {},
         ),
         PopupMenuButton<ItemMenuEnum>(
           initialValue: selectedMenu,

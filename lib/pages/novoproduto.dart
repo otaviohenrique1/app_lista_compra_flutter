@@ -30,7 +30,10 @@ class _NovoProdutoState extends State<NovoProduto> {
     final formKey = GlobalKey<FormState>();
 
     return Scaffold(
-      appBar: const Header(titulo: "Novo Produto"),
+      appBar: const Header(
+        titulo: "Novo Produto",
+        botaoBusca: true,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Form(
