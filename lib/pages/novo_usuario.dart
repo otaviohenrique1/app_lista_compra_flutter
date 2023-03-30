@@ -23,7 +23,6 @@ class _NovoUsuarioState extends State<NovoUsuario> {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-            // padding: EdgeInsets.only(left: 16, right: 16, top: 32, bottom: 32),
             child: Center(
               child: Column(
                 children: [
