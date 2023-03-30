@@ -1,3 +1,4 @@
+import 'package:app_lista_compra_flutter/pages/detalhes.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 
@@ -61,6 +62,13 @@ class _ItemListaState extends State<ItemLista> {
                 onSelected: (ItemMenuEnum item) {
                   setState(() {
                     selectedMenu = item;
+                    if (item == ItemMenuEnum.exibir) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Detalhes(),
+                          ));
+                    }
                   });
                 },
                 itemBuilder: (BuildContext context) =>

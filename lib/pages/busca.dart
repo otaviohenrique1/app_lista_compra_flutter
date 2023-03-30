@@ -29,6 +29,7 @@ class _BuscaState extends State<Busca> {
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
     final ColorScheme colors = Theme.of(context).colorScheme;
+    String termoBusca = "Teste";
 
     return Scaffold(
       appBar: const Header(
@@ -81,24 +82,45 @@ class _BuscaState extends State<Busca> {
                   //   ),
                   // ),
                   IconButton(
-                      icon: const Icon(Icons.search),
-                      onPressed: () {
-                        if (formKey.currentState!.validate()) {}
-                      },
-                      style: IconButton.styleFrom(
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(8),
-                          ),
+                    icon: const Icon(Icons.search),
+                    onPressed: () {
+                      if (formKey.currentState!.validate()) {}
+                    },
+                    style: IconButton.styleFrom(
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(8),
                         ),
-                        foregroundColor: colors.onPrimary,
-                        backgroundColor: colors.primary,
-                        disabledBackgroundColor:
-                            colors.onSurface.withOpacity(0.12),
-                        hoverColor: colors.onPrimary.withOpacity(0.08),
-                        focusColor: colors.onPrimary.withOpacity(0.12),
-                        highlightColor: colors.onPrimary.withOpacity(0.12),
-                      )),
+                      ),
+                      foregroundColor: colors.onPrimary,
+                      backgroundColor: colors.primary,
+                      disabledBackgroundColor:
+                          colors.onSurface.withOpacity(0.12),
+                      hoverColor: colors.onPrimary.withOpacity(0.08),
+                      focusColor: colors.onPrimary.withOpacity(0.12),
+                      highlightColor: colors.onPrimary.withOpacity(0.12),
+                    ),
+                  ),
+                  // IconButton(
+                  //   icon: const Icon(Icons.search),
+                  //   onPressed: () {
+                  //     if (formKey.currentState!.validate()) {}
+                  //   },
+                  //   style: IconButton.styleFrom(
+                  //     shape: const RoundedRectangleBorder(
+                  //       borderRadius: BorderRadius.all(
+                  //         Radius.circular(8),
+                  //       ),
+                  //     ),
+                  //     foregroundColor: colors.onPrimary,
+                  //     backgroundColor: colors.primary,
+                  //     disabledBackgroundColor:
+                  //         colors.onSurface.withOpacity(0.12),
+                  //     hoverColor: colors.onPrimary.withOpacity(0.08),
+                  //     focusColor: colors.onPrimary.withOpacity(0.12),
+                  //     highlightColor: colors.onPrimary.withOpacity(0.12),
+                  //   ),
+                  // ),
                   // IconButton(
                   //   onPressed: () {
                   //     if (formKey.currentState!.validate()) {}
@@ -128,6 +150,42 @@ class _BuscaState extends State<Busca> {
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(top: 16),
+              child: Container(
+                decoration: const BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      color: Colors.black,
+                      style: BorderStyle.solid,
+                      width: 1,
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 8),
+                        child: Text(
+                          "Termo busca:",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ),
+                      Center(
+                        child: Text(
+                          termoBusca,
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),

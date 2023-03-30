@@ -24,8 +24,10 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     ItemMenuEnum? selectedMenu;
+    // final ColorScheme colors = Theme.of(context).colorScheme;
 
     return AppBar(
+      // backgroundColor: colors.onPrimary,
       backgroundColor: globalStyleColors["azul"],
       title: Text(
         widget.titulo,
