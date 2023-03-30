@@ -1,3 +1,4 @@
+import 'package:app_lista_compra_flutter/pages/perfil.dart';
 import 'package:app_lista_compra_flutter/pages/teste.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/pages/busca.dart';
@@ -78,13 +79,49 @@ class _HeaderState extends State<Header> {
               } else if (item == ItemMenuEnum.pefil) {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Teste()),
+                  MaterialPageRoute(builder: (context) => const Perfil()),
                 );
               } else if (item == ItemMenuEnum.sair) {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Login()),
+                showDialog<String>(
+                  context: context,
+                  builder: (BuildContext context) => AlertDialog(
+                    title: const Text('Aviso!'),
+                    content: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Deseja sair do aplicativo?'),
+                      ],
+                    ),
+                    icon: const Icon(
+                      Icons.warning_amber_rounded,
+                      size: 64,
+                    ),
+                    iconColor: Colors.red,
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        // onPressed: () => Navigator.pop(context, 'Cancel'),
+                        child: const Text('Não'),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                          // Navigator.pop(context, 'OK');
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Login()),
+                          );
+                        },
+                        child: const Text('Sim'),
+                      ),
+                    ],
+                  ),
                 );
+                // Navigator.pushReplacement(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => const Login()),
+                // );
               }
             });
           },

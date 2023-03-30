@@ -8,6 +8,19 @@ List<String> unidadeQuantidade = [
   "ml"
 ];
 
+List<Map<String, dynamic>> usuario = [
+  {
+    "nome": "Usuario",
+    "email": "usuario@email.com",
+    "senha": "0123456789",
+  },
+  {
+    "nome": "Usuario2",
+    "email": "usuario2@email.com",
+    "senha": "9876543210",
+  },
+];
+
 List<Map<String, dynamic>> produtos = [
   {
     "nome": "Leite",

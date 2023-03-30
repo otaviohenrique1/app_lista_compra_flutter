@@ -1,3 +1,4 @@
+import 'package:app_lista_compra_flutter/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/components/header.dart';
 
@@ -44,6 +45,10 @@ class _TesteState extends State<Teste> {
                   TextButton(
                     onPressed: () {
                       Navigator.pop(context, 'OK');
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Login()),
+                      );
                     },
                     child: const Text('Sim'),
                   ),

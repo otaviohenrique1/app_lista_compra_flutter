@@ -1,4 +1,5 @@
 import 'package:app_lista_compra_flutter/pages/edicao.dart';
+import 'package:app_lista_compra_flutter/utils/formatadores.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/pages/itemdetalhes.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
@@ -33,12 +34,15 @@ class _DetalhesState extends State<Detalhes> {
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: ItemDetalhes(
                 titulo: "Quantidade:",
-                descricao: produtos[1]["quantidade"].toString(),
+                descricao: formataQuantidadeUnidade(
+                  produtos[1]["quantidade"],
+                  produtos[1]["unidade"],
+                ),
               ),
             ),
             ItemDetalhes(
-              titulo: "Unidade:",
-              descricao: produtos[1]["unidade"],
+              titulo: "Categoria:",
+              descricao: produtos[1]["categoria"],
             ),
             Padding(
               padding: const EdgeInsets.only(top: 32),

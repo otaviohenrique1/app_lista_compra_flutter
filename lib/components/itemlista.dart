@@ -3,6 +3,8 @@ import 'package:app_lista_compra_flutter/pages/edicao.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 
+import '../utils/formatadores.dart';
+
 enum ItemMenuEnum { exibir, editar, remover }
 
 class ItemLista extends StatefulWidget {
@@ -23,10 +25,6 @@ class ItemLista extends StatefulWidget {
 }
 
 class _ItemListaState extends State<ItemLista> {
-  String _formataQuantidadeUnidade(num quantidade, String unidade) {
-    return "${widget.quantidade} ${widget.unidade}";
-  }
-
   @override
   Widget build(BuildContext context) {
     ItemMenuEnum? selectedMenu;
@@ -52,7 +50,7 @@ class _ItemListaState extends State<ItemLista> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                _formataQuantidadeUnidade(widget.quantidade, widget.unidade),
+                formataQuantidadeUnidade(widget.quantidade, widget.unidade),
                 textAlign: TextAlign.end,
                 style: const TextStyle(
                   color: Colors.black,
