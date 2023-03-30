@@ -1,5 +1,5 @@
 import 'package:app_lista_compra_flutter/pages/detalhes.dart';
-import 'package:app_lista_compra_flutter/pages/edicao.dart';
+import 'package:app_lista_compra_flutter/pages/edicaoproduto.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 
@@ -78,7 +78,7 @@ class _ItemListaState extends State<ItemLista> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Edicao(),
+                          builder: (context) => const EdicaoProduto(),
                         ),
                       );
                     }

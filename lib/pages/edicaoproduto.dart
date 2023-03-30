@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/campotexto.dart';
 import 'package:app_lista_compra_flutter/components/header.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
-import 'package:flutter/material.dart';
 
 const List<String> unidadeQuantidade = <String>[
   "Selecione",
@@ -14,14 +14,14 @@ const List<String> unidadeQuantidade = <String>[
   "ml"
 ];
 
-class Edicao extends StatefulWidget {
-  const Edicao({super.key});
+class EdicaoProduto extends StatefulWidget {
+  const EdicaoProduto({super.key});
 
   @override
-  State<Edicao> createState() => _EdicaoState();
+  State<EdicaoProduto> createState() => _EdicaoProdutoState();
 }
 
-class _EdicaoState extends State<Edicao> {
+class _EdicaoProdutoState extends State<EdicaoProduto> {
   String dropdownValue = unidadeQuantidade.first;
   String dropdownValue2 = unidadeQuantidade.first;
 

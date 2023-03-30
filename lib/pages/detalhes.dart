@@ -1,4 +1,4 @@
-import 'package:app_lista_compra_flutter/pages/edicao.dart';
+import 'package:app_lista_compra_flutter/pages/edicaoproduto.dart';
 import 'package:app_lista_compra_flutter/utils/formatadores.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/pages/itemdetalhes.dart';
@@ -54,7 +54,8 @@ class _DetalhesState extends State<Detalhes> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Edicao()),
+                    MaterialPageRoute(
+                        builder: (context) => const EdicaoProduto()),
                   );
                 },
               ),
