@@ -1,6 +1,6 @@
-import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/pages/login.dart';
+// import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 
 void main() {
   runApp(const MyApp());

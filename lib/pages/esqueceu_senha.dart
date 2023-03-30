@@ -5,14 +5,14 @@ import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/campo_texto.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 
-class NovoUsuario extends StatefulWidget {
-  const NovoUsuario({super.key});
+class EsqueceuSenha extends StatefulWidget {
+  const EsqueceuSenha({super.key});
 
   @override
-  State<NovoUsuario> createState() => _NovoUsuarioState();
+  State<EsqueceuSenha> createState() => _EsqueceuSenhaState();
 }
 
-class _NovoUsuarioState extends State<NovoUsuario> {
+class _EsqueceuSenhaState extends State<EsqueceuSenha> {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
@@ -30,7 +30,7 @@ class _NovoUsuarioState extends State<NovoUsuario> {
                   const Padding(
                     padding: EdgeInsets.only(bottom: 64),
                     child: Text(
-                      "Novo usuário",
+                      "Esqueceu a senha?",
                       style: TextStyle(fontSize: 32),
                     ),
                   ),
@@ -41,31 +41,8 @@ class _NovoUsuarioState extends State<NovoUsuario> {
                         Container(
                           margin: const EdgeInsets.only(bottom: 16),
                           child: const CampoTexto(
-                            labelText: "Nome",
-                            keyboardType: TextInputType.text,
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(bottom: 16),
-                          child: const CampoTexto(
                             labelText: "Email",
                             keyboardType: TextInputType.emailAddress,
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(bottom: 16),
-                          child: const CampoTexto(
-                            labelText: "Senha",
-                            keyboardType: TextInputType.text,
-                            obscureText: true,
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(bottom: 16),
-                          child: const CampoTexto(
-                            labelText: "Repita a senha",
-                            keyboardType: TextInputType.text,
-                            obscureText: true,
                           ),
                         ),
                         Padding(
@@ -83,12 +60,12 @@ class _NovoUsuarioState extends State<NovoUsuario> {
                                     showCloseIcon: true,
                                   ),
                                 );
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const Login(),
-                                  ),
-                                );
+                                // Navigator.pushReplacement(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //     builder: (context) => const Login(),
+                                //   ),
+                                // );
                               }
                             },
                           ),

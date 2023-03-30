@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:app_lista_compra_flutter/pages/login.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/campo_texto.dart';
-import 'package:app_lista_compra_flutter/pages/homepage.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 
 class UsuarioFormulario extends StatelessWidget {
@@ -64,7 +64,7 @@ class UsuarioFormulario extends StatelessWidget {
                   );
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomePage()),
+                    MaterialPageRoute(builder: (context) => const Login()),
                   );
                 }
               },

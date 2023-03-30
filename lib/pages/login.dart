@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/campo_texto.dart';
 import 'package:app_lista_compra_flutter/pages/homepage.dart';
@@ -18,71 +19,94 @@ class _LoginState extends State<Login> {
     final formKey = GlobalKey<FormState>();
 
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Center(
-          child: Form(
-            key: formKey,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Container(
-                    height: 200,
-                    width: 200,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: Colors.blueAccent,
+      body: AnnotatedRegion(
+        value: SystemUiOverlayStyle.dark,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Center(
+            child: Form(
+              key: formKey,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(bottom: 64),
+                      child: Text(
+                        "Lista de compras",
+                        style: TextStyle(fontSize: 32),
+                      ),
                     ),
-                    child: const Icon(
-                      Icons.shopping_cart,
-                      color: Colors.black,
-                      size: 128,
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 20),
+                      child: const CampoTexto(
+                        labelText: "Email",
+                        keyboardType: TextInputType.emailAddress,
+                      ),
                     ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(bottom: 20),
-                    child: const CampoTexto(
-                      labelText: "Email",
-                      keyboardType: TextInputType.emailAddress,
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 20),
+                      child: const CampoTexto(
+                        labelText: "Senha",
+                        keyboardType: TextInputType.text,
+                        obscureText: true,
+                      ),
                     ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(bottom: 20),
-                    child: const CampoTexto(
-                      labelText: "Senha",
-                      keyboardType: TextInputType.text,
-                      obscureText: true,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 64),
+                      child: Column(
+                        children: [
+                          Botao(
+                            backgroundColor: globalStyleColors["azul"],
+                            label: "Entrar",
+                            fontColor: Colors.white,
+                            fontSize: 20,
+                            onPressed: () {
+                              if (formKey.currentState!.validate()) {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const HomePage(),
+                                  ),
+                                );
+                              }
+                            },
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8, bottom: 8),
+                            child: Botao(
+                              backgroundColor: Colors.green,
+                              label: "Novo usuário",
+                              fontColor: Colors.white,
+                              fontSize: 20,
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const NovoUsuario(),
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                          Botao(
+                            backgroundColor: Colors.deepOrange,
+                            label: "Esqueceu a senha?",
+                            fontColor: Colors.white,
+                            fontSize: 20,
+                            onPressed: () {
+                              // Navigator.pushReplacement(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) => const HomePage(),
+                              //   ),
+                              // );
+                            },
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Botao(
-                    backgroundColor: globalStyleColors["azul"],
-                    label: "Entrar",
-                    fontColor: Colors.white,
-                    fontSize: 20,
-                    onPressed: () {
-                      if (formKey.currentState!.validate()) {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const HomePage()),
-                        );
-                      }
-                    },
-                  ),
-                  Botao(
-                    backgroundColor: Colors.green,
-                    label: "Novo usuário",
-                    fontColor: Colors.white,
-                    fontSize: 20,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const NovoUsuario()),
-                      );
-                    },
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
