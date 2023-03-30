@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/campo_texto.dart';
 import 'package:app_lista_compra_flutter/components/header.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
-import 'package:flutter/material.dart';
 
 const List<String> unidadeQuantidade = <String>[
   "Selecione",

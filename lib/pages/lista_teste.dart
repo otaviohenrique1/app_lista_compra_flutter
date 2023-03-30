@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/itemlista.dart';
+import 'package:app_lista_compra_flutter/components/item_lista.dart';
 
 class ListaTeste extends StatelessWidget {
   const ListaTeste({super.key});

@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/campo_texto.dart';
 import 'package:app_lista_compra_flutter/pages/homepage.dart';
 import 'package:app_lista_compra_flutter/pages/novo_usuario.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
-import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
