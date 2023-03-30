@@ -1,3 +1,4 @@
+import 'package:app_lista_compra_flutter/pages/teste.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/pages/busca.dart';
 import 'package:app_lista_compra_flutter/pages/login.dart';
@@ -69,7 +70,17 @@ class _HeaderState extends State<Header> {
           onSelected: (item) {
             setState(() {
               selectedMenu = item;
-              if (item == ItemMenuEnum.sair) {
+              if (item == ItemMenuEnum.busca) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Busca()),
+                );
+              } else if (item == ItemMenuEnum.pefil) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Teste()),
+                );
+              } else if (item == ItemMenuEnum.sair) {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const Login()),

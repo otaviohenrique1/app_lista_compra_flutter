@@ -1,3 +1,4 @@
+import 'package:app_lista_compra_flutter/pages/edicao.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/pages/itemdetalhes.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
@@ -28,9 +29,12 @@ class _DetalhesState extends State<Detalhes> {
               titulo: "Nome:",
               descricao: produtos[1]["nome"],
             ),
-            ItemDetalhes(
-              titulo: "Quantidade:",
-              descricao: produtos[1]["quantidade"].toString(),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: ItemDetalhes(
+                titulo: "Quantidade:",
+                descricao: produtos[1]["quantidade"].toString(),
+              ),
             ),
             ItemDetalhes(
               titulo: "Unidade:",
@@ -40,14 +44,14 @@ class _DetalhesState extends State<Detalhes> {
               padding: const EdgeInsets.only(top: 32),
               child: Botao(
                 backgroundColor: globalStyleColors["azul"],
-                label: "Buscar",
+                label: "Editar",
                 fontColor: Colors.white,
                 fontSize: 20,
                 onPressed: () {
-                  // Navigator.pushReplacement(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => const Edicao()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Edicao()),
+                  );
                 },
               ),
             ),
@@ -57,19 +61,6 @@ class _DetalhesState extends State<Detalhes> {
     );
   }
 }
-
-/*
-ListView.builder(
-  itemCount: produtos.length,
-  itemBuilder: (context, index) {
-    return ItemLista(
-      nome: produtos[index]["nome"],
-      quantidade: produtos[index]["quantidade"],
-      unidade: produtos[index]["unidade"],
-    );
-  },
-)
-*/
 
 /*
 import 'package:flutter/material.dart';

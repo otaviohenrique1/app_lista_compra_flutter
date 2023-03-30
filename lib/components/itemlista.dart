@@ -1,4 +1,5 @@
 import 'package:app_lista_compra_flutter/pages/detalhes.dart';
+import 'package:app_lista_compra_flutter/pages/edicao.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 
@@ -22,6 +23,10 @@ class ItemLista extends StatefulWidget {
 }
 
 class _ItemListaState extends State<ItemLista> {
+  String _formataQuantidadeUnidade(num quantidade, String unidade) {
+    return "${widget.quantidade} ${widget.unidade}";
+  }
+
   @override
   Widget build(BuildContext context) {
     ItemMenuEnum? selectedMenu;
@@ -47,7 +52,7 @@ class _ItemListaState extends State<ItemLista> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "${widget.quantidade} ${widget.unidade}",
+                _formataQuantidadeUnidade(widget.quantidade, widget.unidade),
                 textAlign: TextAlign.end,
                 style: const TextStyle(
                   color: Colors.black,
@@ -66,10 +71,18 @@ class _ItemListaState extends State<ItemLista> {
                     selectedMenu = item;
                     if (item == ItemMenuEnum.exibir) {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Detalhes(),
-                          ));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Detalhes(),
+                        ),
+                      );
+                    } else if (item == ItemMenuEnum.editar) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Edicao(),
+                        ),
+                      );
                     }
                   });
                 },
