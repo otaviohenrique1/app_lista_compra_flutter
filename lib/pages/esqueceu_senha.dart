@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:app_lista_compra_flutter/pages/login.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/campo_texto.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
@@ -22,7 +21,7 @@ class _EsqueceuSenhaState extends State<EsqueceuSenha> {
         value: SystemUiOverlayStyle.dark,
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 128),
             // padding: EdgeInsets.only(left: 16, right: 16, top: 32, bottom: 32),
             child: Center(
               child: Column(

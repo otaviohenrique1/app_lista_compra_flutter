@@ -1,3 +1,4 @@
+import 'package:app_lista_compra_flutter/pages/esqueceu_senha.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
@@ -94,12 +95,12 @@ class _LoginState extends State<Login> {
                             fontColor: Colors.white,
                             fontSize: 20,
                             onPressed: () {
-                              // Navigator.pushReplacement(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => const HomePage(),
-                              //   ),
-                              // );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const EsqueceuSenha(),
+                                ),
+                              );
                             },
                           ),
                         ],
