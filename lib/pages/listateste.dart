@@ -6,22 +6,23 @@ class ListaTeste extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int id = 1;
     String nome = "Leite";
     num quantidade = 30;
     String unidade = "un";
 
     return ListView(
       children: <Widget>[
-        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
-        ItemLista(nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(id: id, nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(id: id, nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(id: id, nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(id: id, nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(id: id, nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(id: id, nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(id: id, nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(id: id, nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(id: id, nome: nome, quantidade: quantidade, unidade: unidade),
+        ItemLista(id: id, nome: nome, quantidade: quantidade, unidade: unidade),
       ],
     );
   }

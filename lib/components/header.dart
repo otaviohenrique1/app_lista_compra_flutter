@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/pages/busca.dart';
 import 'package:app_lista_compra_flutter/pages/login.dart';
-import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 
 enum ItemMenuEnum { pefil, busca, sair }

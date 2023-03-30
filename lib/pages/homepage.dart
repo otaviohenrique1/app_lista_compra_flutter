@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
           itemCount: produtos.length,
           itemBuilder: (context, index) {
             return ItemLista(
+              id: index,
               nome: produtos[index]["nome"],
               quantidade: produtos[index]["quantidade"],
               unidade: produtos[index]["unidade"],

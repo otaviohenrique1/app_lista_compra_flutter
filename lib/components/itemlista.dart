@@ -5,6 +5,7 @@ import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 enum ItemMenuEnum { exibir, editar, remover }
 
 class ItemLista extends StatefulWidget {
+  final int id;
   final String nome;
   final num quantidade;
   final String unidade;
@@ -13,6 +14,7 @@ class ItemLista extends StatefulWidget {
     required this.nome,
     required this.quantidade,
     required this.unidade,
+    required this.id,
   });
 
   @override

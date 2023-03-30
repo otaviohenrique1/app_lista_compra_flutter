@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:app_lista_compra_flutter/pages/itemdetalhes.dart';
+import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/header.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 import 'package:app_lista_compra_flutter/utils/lista.dart';
-import 'package:flutter/material.dart';
 
 class Detalhes extends StatefulWidget {
   const Detalhes({super.key});
@@ -22,38 +24,33 @@ class _DetalhesState extends State<Detalhes> {
         padding: const EdgeInsets.all(16),
         child: ListView(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                color: globalStyleColors["cinzaClaro"],
-                border: Border.all(),
-                borderRadius: const BorderRadius.all(
-                  Radius.elliptical(8, 8),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Column(
-                  children: [
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Nome",
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        produtos[1]["nome"],
-                        style: const TextStyle(fontSize: 16),
-                      ),
-                    ),
-                  ],
-                ),
+            ItemDetalhes(
+              titulo: "Nome:",
+              descricao: produtos[1]["nome"],
+            ),
+            ItemDetalhes(
+              titulo: "Quantidade:",
+              descricao: produtos[1]["quantidade"].toString(),
+            ),
+            ItemDetalhes(
+              titulo: "Unidade:",
+              descricao: produtos[1]["unidade"],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 32),
+              child: Botao(
+                backgroundColor: globalStyleColors["azul"],
+                label: "Buscar",
+                fontColor: Colors.white,
+                fontSize: 20,
+                onPressed: () {
+                  // Navigator.pushReplacement(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => const Edicao()),
+                  // );
+                },
               ),
             ),
-            Text(produtos[1]["quantidade"].toString()),
-            Text(produtos[1]["unidade"]),
           ],
         ),
       ),
