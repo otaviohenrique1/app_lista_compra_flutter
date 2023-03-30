@@ -1,5 +1,5 @@
-import 'package:app_lista_compra_flutter/pages/detalhes.dart';
-import 'package:app_lista_compra_flutter/pages/edicaoproduto.dart';
+import 'package:app_lista_compra_flutter/pages/detalhes_produto.dart';
+import 'package:app_lista_compra_flutter/pages/edicao_produto.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 
@@ -71,7 +71,7 @@ class _ItemListaState extends State<ItemLista> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Detalhes(),
+                          builder: (context) => const DetalhesProduto(),
                         ),
                       );
                     } else if (item == ItemMenuEnum.editar) {

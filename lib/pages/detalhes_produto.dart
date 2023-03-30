@@ -1,20 +1,20 @@
-import 'package:app_lista_compra_flutter/pages/edicaoproduto.dart';
+import 'package:app_lista_compra_flutter/pages/edicao_produto.dart';
 import 'package:app_lista_compra_flutter/utils/formatadores.dart';
 import 'package:flutter/material.dart';
-import 'package:app_lista_compra_flutter/pages/itemdetalhes.dart';
+import 'package:app_lista_compra_flutter/pages/item_detalhes.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/header.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 import 'package:app_lista_compra_flutter/utils/lista.dart';
 
-class Detalhes extends StatefulWidget {
-  const Detalhes({super.key});
+class DetalhesProduto extends StatefulWidget {
+  const DetalhesProduto({super.key});
 
   @override
-  State<Detalhes> createState() => _DetalhesState();
+  State<DetalhesProduto> createState() => _DetalhesProdutoState();
 }
 
-class _DetalhesState extends State<Detalhes> {
+class _DetalhesProdutoState extends State<DetalhesProduto> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

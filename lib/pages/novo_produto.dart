@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
-import 'package:app_lista_compra_flutter/components/campotexto.dart';
+import 'package:app_lista_compra_flutter/components/campo_texto.dart';
 import 'package:app_lista_compra_flutter/components/header.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
+import 'package:flutter/material.dart';
 
 const List<String> unidadeQuantidade = <String>[
   "Selecione",
@@ -14,14 +14,14 @@ const List<String> unidadeQuantidade = <String>[
   "ml"
 ];
 
-class EdicaoProduto extends StatefulWidget {
-  const EdicaoProduto({super.key});
+class NovoProduto extends StatefulWidget {
+  const NovoProduto({super.key});
 
   @override
-  State<EdicaoProduto> createState() => _EdicaoProdutoState();
+  State<NovoProduto> createState() => _NovoProdutoState();
 }
 
-class _EdicaoProdutoState extends State<EdicaoProduto> {
+class _NovoProdutoState extends State<NovoProduto> {
   String dropdownValue = unidadeQuantidade.first;
   String dropdownValue2 = unidadeQuantidade.first;
 
@@ -31,7 +31,7 @@ class _EdicaoProdutoState extends State<EdicaoProduto> {
 
     return Scaffold(
       appBar: const Header(
-        titulo: "Edição",
+        titulo: "Novo Produto",
         botaoBusca: true,
       ),
       body: Padding(
@@ -109,7 +109,7 @@ class _EdicaoProdutoState extends State<EdicaoProduto> {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text(
-                          "Produto editado com sucesso!",
+                          "Produto cadastrado com sucesso!",
                           style: TextStyle(
                             fontSize: 16,
                           ),

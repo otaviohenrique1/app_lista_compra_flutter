@@ -1,9 +1,9 @@
 import 'package:app_lista_compra_flutter/components/header.dart';
-import 'package:app_lista_compra_flutter/pages/novoproduto.dart';
+import 'package:app_lista_compra_flutter/pages/novo_produto.dart';
 import 'package:app_lista_compra_flutter/utils/lista.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
-import 'package:app_lista_compra_flutter/components/itemlista.dart';
+import 'package:app_lista_compra_flutter/components/item_lista.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

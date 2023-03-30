@@ -1,18 +1,18 @@
 import 'package:app_lista_compra_flutter/utils/lista.dart';
 import 'package:flutter/material.dart';
-import 'package:app_lista_compra_flutter/pages/item_detalhes.dart';
+import 'package:app_lista_compra_flutter/pages/itemdetalhes.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 import 'package:app_lista_compra_flutter/components/header.dart';
 import '../components/botao.dart';
 
-class Perfil extends StatefulWidget {
-  const Perfil({super.key});
+class PerfilEdicao extends StatefulWidget {
+  const PerfilEdicao({super.key});
 
   @override
-  State<Perfil> createState() => _PerfilState();
+  State<PerfilEdicao> createState() => _PerfilEdicaoState();
 }
 
-class _PerfilState extends State<Perfil> {
+class _PerfilEdicaoState extends State<PerfilEdicao> {
   @override
   Widget build(BuildContext context) {
     String senha = usuario[0]["senha"];
