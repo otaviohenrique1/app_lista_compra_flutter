@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:app_lista_compra_flutter/pages/codigo_recuperacao.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/campo_texto.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
@@ -55,16 +56,18 @@ class _EsqueceuSenhaState extends State<EsqueceuSenha> {
                               if (formKey.currentState!.validate()) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
-                                    content: Text('Usuario cadastrado'),
+                                    content: Text(
+                                        'Email com o codigo de recuperação foi enviado!'),
                                     showCloseIcon: true,
                                   ),
                                 );
-                                // Navigator.pushReplacement(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //     builder: (context) => const Login(),
-                                //   ),
-                                // );
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const CodigoRecuperacao(),
+                                  ),
+                                );
                               }
                             },
                           ),
