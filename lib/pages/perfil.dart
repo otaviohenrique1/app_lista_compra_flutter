@@ -2,7 +2,7 @@ import 'package:app_lista_compra_flutter/pages/perfil_edicao.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/utils/lista.dart';
-import 'package:app_lista_compra_flutter/pages/item_detalhes.dart';
+import 'package:app_lista_compra_flutter/components/item_detalhes.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 import 'package:app_lista_compra_flutter/components/header.dart';
 

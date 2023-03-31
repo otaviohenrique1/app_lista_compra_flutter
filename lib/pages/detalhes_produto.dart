@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:app_lista_compra_flutter/components/item_detalhes.dart';
 import 'package:app_lista_compra_flutter/pages/edicao_produto.dart';
 import 'package:app_lista_compra_flutter/utils/formatadores.dart';
-import 'package:app_lista_compra_flutter/pages/item_detalhes.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/header.dart';
 import 'package:app_lista_compra_flutter/styles/globalstyle.dart';

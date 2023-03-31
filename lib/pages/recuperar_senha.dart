@@ -57,7 +57,7 @@ class _RecuperarSenhaState extends State<RecuperarSenha> {
                         children: [
                           Botao(
                             backgroundColor: globalStyleColors["azul"],
-                            label: "Entrar",
+                            label: "Salvar",
                             fontColor: Colors.white,
                             fontSize: 20,
                             onPressed: () {
