@@ -8,7 +8,11 @@ import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 import 'package:app_lista_compra_flutter/utils/lista.dart';
 
 class DetalhesProduto extends StatefulWidget {
-  const DetalhesProduto({super.key});
+  const DetalhesProduto({
+    super.key,
+    required this.id,
+  });
+  final int id;
 
   @override
   State<DetalhesProduto> createState() => _DetalhesProdutoState();
@@ -28,15 +32,15 @@ class _DetalhesProdutoState extends State<DetalhesProduto> {
           children: [
             ItemDetalhes(
               titulo: "Nome:",
-              descricao: produtos[1]["nome"],
+              descricao: produtos[widget.id]["nome"],
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: ItemDetalhes(
                 titulo: "Quantidade:",
                 descricao: formataQuantidadeUnidade(
-                  produtos[1]["quantidade"],
-                  produtos[1]["unidade"],
+                  produtos[widget.id]["quantidade"],
+                  produtos[widget.id]["unidade"],
                 ),
               ),
             ),

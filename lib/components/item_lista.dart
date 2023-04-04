@@ -71,7 +71,7 @@ class _ItemListaState extends State<ItemLista> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const DetalhesProduto(),
+                          builder: (context) => DetalhesProduto(id: widget.id),
                         ),
                       );
                     } else if (item == ItemMenuEnum.editar) {
