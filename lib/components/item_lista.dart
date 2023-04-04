@@ -38,7 +38,7 @@ class _ItemListaState extends State<ItemLista> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            widget.nome,
+            "[${widget.id}] - ${widget.nome}",
             textAlign: TextAlign.start,
             style: const TextStyle(
               color: Colors.black,
