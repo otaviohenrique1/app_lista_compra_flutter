@@ -67,15 +67,15 @@ class _EdicaoProdutoState extends State<EdicaoProduto> {
                   initialValue: quantidade,
                 ),
               ),
-              Select(
-                lista: unidadeQuantidade,
-                validator: (value) {
-                  if (value == null || value.isEmpty || value == "Selecione") {
-                    return "Valor inválido";
-                  }
-                  return null;
-                },
-              ),
+              // Select(
+              //   lista: unidadeQuantidade,
+              //   validator: (value) {
+              //     if (value == null || value.isEmpty || value == "Selecione") {
+              //       return "Valor inválido";
+              //     }
+              //     return null;
+              //   },
+              // ),
               Container(
                 margin: const EdgeInsets.only(bottom: 20),
                 child: DropdownButtonFormField(
