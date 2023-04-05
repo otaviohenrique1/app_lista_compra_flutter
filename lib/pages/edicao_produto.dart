@@ -1,3 +1,4 @@
+import 'package:app_lista_compra_flutter/components/select.dart';
 import 'package:app_lista_compra_flutter/utils/lista.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
@@ -65,6 +66,15 @@ class _EdicaoProdutoState extends State<EdicaoProduto> {
                   keyboardType: TextInputType.number,
                   initialValue: quantidade,
                 ),
+              ),
+              Select(
+                lista: unidadeQuantidade,
+                validator: (value) {
+                  if (value == null || value.isEmpty || value == "Selecione") {
+                    return "Valor inválido";
+                  }
+                  return null;
+                },
               ),
               Container(
                 margin: const EdgeInsets.only(bottom: 20),
