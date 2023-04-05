@@ -78,7 +78,7 @@ class _ItemListaState extends State<ItemLista> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const EdicaoProduto(),
+                          builder: (context) => EdicaoProduto(id: widget.id),
                         ),
                       );
                     }

@@ -1,3 +1,4 @@
+import 'package:app_lista_compra_flutter/utils/lista.dart';
 import 'package:flutter/material.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/campo_texto.dart';
@@ -15,7 +16,12 @@ const List<String> unidadeQuantidade = <String>[
 ];
 
 class EdicaoProduto extends StatefulWidget {
-  const EdicaoProduto({super.key});
+  const EdicaoProduto({
+    super.key,
+    required this.id,
+  });
+
+  final int id;
 
   @override
   State<EdicaoProduto> createState() => _EdicaoProdutoState();
@@ -23,11 +29,15 @@ class EdicaoProduto extends StatefulWidget {
 
 class _EdicaoProdutoState extends State<EdicaoProduto> {
   String dropdownValue = unidadeQuantidade.first;
-  String dropdownValue2 = unidadeQuantidade.first;
 
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
+
+    String nome = produtos[widget.id]["nome"];
+    String quantidade = produtos[widget.id]["quantidade"].toString();
+    String unidade = produtos[widget.id]["unidade"];
+    String categoria = produtos[widget.id]["categoria"];
 
     return Scaffold(
       appBar: const Header(
@@ -42,16 +52,18 @@ class _EdicaoProdutoState extends State<EdicaoProduto> {
             children: [
               Container(
                 margin: const EdgeInsets.only(bottom: 20),
-                child: const CampoTexto(
+                child: CampoTexto(
                   labelText: "Nome",
                   keyboardType: TextInputType.text,
+                  initialValue: nome,
                 ),
               ),
               Container(
                 margin: const EdgeInsets.only(bottom: 20),
-                child: const CampoTexto(
+                child: CampoTexto(
                   labelText: "Quantidade",
                   keyboardType: TextInputType.number,
+                  initialValue: quantidade,
                 ),
               ),
               Container(
@@ -94,9 +106,10 @@ class _EdicaoProdutoState extends State<EdicaoProduto> {
               ),
               Container(
                 margin: const EdgeInsets.only(bottom: 50),
-                child: const CampoTexto(
+                child: CampoTexto(
                   labelText: "Categoria",
                   keyboardType: TextInputType.text,
+                  initialValue: categoria,
                 ),
               ),
               Botao(

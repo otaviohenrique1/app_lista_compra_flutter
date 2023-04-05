@@ -12,6 +12,7 @@ class DetalhesProduto extends StatefulWidget {
     super.key,
     required this.id,
   });
+
   final int id;
 
   @override
@@ -21,6 +22,11 @@ class DetalhesProduto extends StatefulWidget {
 class _DetalhesProdutoState extends State<DetalhesProduto> {
   @override
   Widget build(BuildContext context) {
+    String nome = produtos[widget.id]["nome"];
+    num quantidade = produtos[widget.id]["quantidade"];
+    String unidade = produtos[widget.id]["unidade"];
+    String categoria = produtos[widget.id]["categoria"];
+
     return Scaffold(
       appBar: const Header(
         titulo: "Lista",
@@ -32,21 +38,21 @@ class _DetalhesProdutoState extends State<DetalhesProduto> {
           children: [
             ItemDetalhes(
               titulo: "Nome:",
-              descricao: produtos[widget.id]["nome"],
+              descricao: nome,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: ItemDetalhes(
                 titulo: "Quantidade:",
                 descricao: formataQuantidadeUnidade(
-                  produtos[widget.id]["quantidade"],
-                  produtos[widget.id]["unidade"],
+                  quantidade,
+                  unidade,
                 ),
               ),
             ),
             ItemDetalhes(
               titulo: "Categoria:",
-              descricao: produtos[1]["categoria"],
+              descricao: categoria,
             ),
             Padding(
               padding: const EdgeInsets.only(top: 32),
@@ -59,7 +65,7 @@ class _DetalhesProdutoState extends State<DetalhesProduto> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const EdicaoProduto()),
+                        builder: (context) => EdicaoProduto(id: widget.id)),
                   );
                 },
               ),

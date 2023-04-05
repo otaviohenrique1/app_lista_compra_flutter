@@ -4,12 +4,14 @@ class CampoTexto extends StatelessWidget {
   final String labelText;
   final TextInputType keyboardType;
   final bool? obscureText;
+  final String? initialValue;
 
   const CampoTexto({
     super.key,
     required this.labelText,
     required this.keyboardType,
     this.obscureText,
+    this.initialValue,
   });
 
   @override
@@ -21,6 +23,7 @@ class CampoTexto extends StatelessWidget {
         }
         return null;
       },
+      initialValue: (initialValue == null) ? "" : initialValue!,
       style: const TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.normal,
