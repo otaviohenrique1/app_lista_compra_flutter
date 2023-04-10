@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 class CampoTexto extends StatelessWidget {
-  final String labelText;
-  final TextInputType keyboardType;
+  final String? labelText;
+  final String? hintText;
+  final TextInputType? keyboardType;
   final bool? obscureText;
   final String? initialValue;
 
   const CampoTexto({
     super.key,
-    required this.labelText,
-    required this.keyboardType,
+    this.keyboardType,
+    this.labelText,
     this.obscureText,
     this.initialValue,
+    this.hintText,
   });
 
   @override
@@ -23,7 +25,7 @@ class CampoTexto extends StatelessWidget {
         }
         return null;
       },
-      initialValue: (initialValue == null) ? "" : initialValue!,
+      initialValue: initialValue,
       style: const TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.normal,
@@ -31,6 +33,7 @@ class CampoTexto extends StatelessWidget {
       obscureText: (obscureText == null) ? false : obscureText!,
       decoration: InputDecoration(
         labelText: labelText,
+        hintText: hintText,
         labelStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.normal,
