@@ -5,9 +5,12 @@ class Select extends StatefulWidget {
     super.key,
     required this.lista,
     this.validator,
+    this.outroItem,
   });
+
   final List<String> lista;
   final String? Function(String?)? validator;
+  final String? outroItem;
 
   @override
   State<Select> createState() => _SelectState();
@@ -16,7 +19,8 @@ class Select extends StatefulWidget {
 class _SelectState extends State<Select> {
   @override
   Widget build(BuildContext context) {
-    String dropdownValue = widget.lista.first;
+    String dropdownValue =
+        (widget.outroItem == null) ? widget.lista.first : widget.outroItem!;
 
     return DropdownButtonFormField(
       value: dropdownValue,
