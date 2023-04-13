@@ -1,7 +1,7 @@
-import 'package:app_lista_compra_flutter/teste_componentes/teste2.dart';
-import 'package:app_lista_compra_flutter/teste_componentes/teste3.dart';
 import 'package:flutter/material.dart';
-// import 'package:app_lista_compra_flutter/pages/login.dart';
+import 'package:app_lista_compra_flutter/pages/login.dart';
+// import 'package:app_lista_compra_flutter/teste_componentes/teste2.dart';
+// import 'package:app_lista_compra_flutter/teste_componentes/teste3.dart';
 // import 'package:app_lista_compra_flutter/styles/globalstyle.dart';
 
 void main() {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Teste3(),
+      home: const Login(),
     );
   }
 }
