@@ -1,5 +1,5 @@
-import 'package:app_lista_compra_flutter/pages/esqueceu_senha.dart';
 import 'package:flutter/material.dart';
+import 'package:app_lista_compra_flutter/pages/esqueceu_senha.dart';
 import 'package:flutter/services.dart';
 import 'package:app_lista_compra_flutter/components/botao.dart';
 import 'package:app_lista_compra_flutter/components/campo_texto.dart';
